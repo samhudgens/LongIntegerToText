@@ -48,8 +48,23 @@ public class Main {
     this method it will become an ArrayList of ("408","21").
      */
 
-    public static ArrayList<String> separateArrayListIntoGroupsOfThree(ArrayList<String> input) {
-        return null;
+    public static ArrayList<String> separateArrayListIntoGroupsOfThree(ArrayList<String> inputArrayList) {
+        ArrayList<String> newArrayList = new ArrayList<String>();
+
+        String str = "";
+        int counter = 1;
+
+        for(int i=0; i<inputArrayList.size(); i++){
+
+            str += inputArrayList.get(i);
+            if(counter % 3 == 0){
+                newArrayList.add(str);
+                str = "";
+            }
+            counter++;
+        }
+
+        return newArrayList;
     }
 
     /*
@@ -58,6 +73,8 @@ public class Main {
      */
 
     public static ArrayList<String> reverseEachArrayListElement(ArrayList<String> input){
+
+        
         return null;
     }
 

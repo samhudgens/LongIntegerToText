@@ -53,6 +53,17 @@ public class MainSpec {
     }
 
     @Test
+    public void separateArrayListIntoGroupsOfThreeTestPart2(){
+        ArrayList<String> otherTestGroupOfThreeArrayList = new ArrayList<String>();
+        otherTestGroupOfThreeArrayList.add("987");
+        otherTestGroupOfThreeArrayList.add("654");
+        otherTestGroupOfThreeArrayList.add("3");
+        ArrayList<String> input = Main.createReversedNumberArrayList(numberArray);
+        ArrayList<String> expected = testGroupOfThreeArrayList;
+        ArrayList<String> actual = Main.separateArrayListIntoGroupsOfThree(input);
+    }
+
+    @Test
     public void reverseEachArrayListElementTest(){
         ArrayList<String> testArrayEachElementReversed = new ArrayList<String>();
         testArrayEachElementReversed.add("789");

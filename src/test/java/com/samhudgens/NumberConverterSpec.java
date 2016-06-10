@@ -1,24 +1,25 @@
-import com.samhudgens.Main;
+package com.samhudgens;
+
+import com.samhudgens.NumberConverter;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.Assert.*;
-import static java.util.Arrays.asList;
 
 
 /**
  * Created by samhudgens on 6/9/16.
  */
-public class MainSpec {
+public class NumberConverterSpec {
 
     String s = "123456789";
     public static String[] numberArray;
     public static ArrayList<String> reversedNumberArrayList = new ArrayList<String>();
     public static ArrayList<String> testReversedNumberArrayList = new ArrayList<String>();
     public static ArrayList<String> testGroupOfThreeArrayList = new ArrayList<String>();
+    NumberConverter numberConverter = new NumberConverter();
 
     @Before
     public void initialize() {
@@ -37,7 +38,7 @@ public class MainSpec {
     @Test
     public void createReversedNumberArrayTest(){
         ArrayList<String> expected = testReversedNumberArrayList;
-        ArrayList<String> actual = Main.createReversedNumberArrayList(numberArray);
+        ArrayList<String> actual = numberConverter.createReversedNumberArrayList(numberArray);
         assertEquals(expected, actual);
     }
 
@@ -46,9 +47,11 @@ public class MainSpec {
         testGroupOfThreeArrayList.add("987");
         testGroupOfThreeArrayList.add("654");
         testGroupOfThreeArrayList.add("321");
-        ArrayList<String> input = Main.createReversedNumberArrayList(numberArray);
+        ArrayList<String> input = numberConverter.createReversedNumberArrayList(numberArray);
         ArrayList<String> expected = testGroupOfThreeArrayList;
-        ArrayList<String> actual = Main.separateArrayListIntoGroupsOfThree(input);
+        System.out.println(testGroupOfThreeArrayList);
+        ArrayList<String> actual = numberConverter.separateArrayListIntoGroupsOfThree(input);
+        System.out.println(actual);
         assertEquals(expected, actual);
     }
 
@@ -58,9 +61,13 @@ public class MainSpec {
         otherTestGroupOfThreeArrayList.add("987");
         otherTestGroupOfThreeArrayList.add("654");
         otherTestGroupOfThreeArrayList.add("3");
-        ArrayList<String> input = Main.createReversedNumberArrayList(numberArray);
-        ArrayList<String> expected = testGroupOfThreeArrayList;
-        ArrayList<String> actual = Main.separateArrayListIntoGroupsOfThree(input);
+        String[] otherNumberArray = {"3","4","5","6","7","8","9"};
+        ArrayList<String> input = numberConverter.createReversedNumberArrayList(otherNumberArray);
+        ArrayList<String> expected = otherTestGroupOfThreeArrayList;
+        ArrayList<String> actual = numberConverter.separateArrayListIntoGroupsOfThree(input);
+        System.out.println(expected);
+        System.out.println(actual);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -74,7 +81,7 @@ public class MainSpec {
         inputArrayList.add("654");
         inputArrayList.add("321");
         ArrayList<String> expected = testArrayEachElementReversed;
-        ArrayList<String> actual = Main.reverseEachArrayListElement(inputArrayList);
+        ArrayList<String> actual = numberConverter.reverseEachArrayListElement(inputArrayList);
         assertEquals(expected, actual);
     }
 
@@ -85,11 +92,11 @@ public class MainSpec {
         String expected3 = "FourHundredNine";
         String expected4 = "TwentyThree";
         String expected5 = "TwentyFour";
-        String actual1 = Main.convertHundredsIntoWords("789");
-        String actual2 = Main.convertHundredsIntoWords("517");
-        String actual3 = Main.convertHundredsIntoWords("409");
-        String actual4 = Main.convertHundredsIntoWords("023");
-        String actual5 = Main.convertHundredsIntoWords("24");
+        String actual1 = numberConverter.convertHundredsIntoWords("789");
+        String actual2 = numberConverter.convertHundredsIntoWords("517");
+        String actual3 = numberConverter.convertHundredsIntoWords("409");
+        String actual4 = numberConverter.convertHundredsIntoWords("023");
+        String actual5 = numberConverter.convertHundredsIntoWords("24");
         assertEquals(expected1, actual1);
         assertEquals(expected2, actual2);
         assertEquals(expected3, actual3);
@@ -107,10 +114,13 @@ public class MainSpec {
         inputArrayList.add("SevenHundredEightyNine");
         inputArrayList.add("FourHundredFiftySix");
         inputArrayList.add("OneHundredTwentyThree");
+        ArrayList<String> expected = testArrayList;
+        ArrayList<String> actual = numberConverter.appendGroupingWords(inputArrayList);
+        assertEquals(expected, actual);
     }
 
     @Test
-    public void reOrderReversedGroupedArrayListTest() {
+    public void reverseGroupedArrayListTest() {
         ArrayList<String> testArrayList = new ArrayList<String>();
         testArrayList.add("OneHundredTwentyThreeMillion");
         testArrayList.add("FourHundredFiftySixThousand");
@@ -120,7 +130,7 @@ public class MainSpec {
         inputArrayList.add("FourHundredFiftySixThousand");
         inputArrayList.add("OneHundredTwentyThreeMillion");
         ArrayList<String> expected = testArrayList;
-        ArrayList<String> actual = Main.reOrderReversedGroupedArrayList(inputArrayList);
+        ArrayList<String> actual = numberConverter.reverseGroupedArrayList(inputArrayList);
         assertEquals(expected, actual);
     }
 
@@ -131,7 +141,7 @@ public class MainSpec {
         inputArrayList.add("FourHundredFiftySixThousand");
         inputArrayList.add("SevenHundredEightyNine");
         String expected = "OneHundredTwentyThreeMillionFourHundredFiftySixThousandSevenHundredEightyNineDollars";
-        String actual = Main.concatenateIntoStringAndAddDollars(inputArrayList);
+        String actual = numberConverter.concatenateIntoStringAndAddDollars(inputArrayList);
         assertEquals(expected, actual);
     }
 }

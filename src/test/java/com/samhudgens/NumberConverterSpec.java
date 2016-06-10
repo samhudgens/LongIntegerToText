@@ -21,18 +21,22 @@ public class NumberConverterSpec {
     public static ArrayList<String> testGroupOfThreeArrayList = new ArrayList<String>();
     NumberConverter numberConverter = new NumberConverter();
 
+    boolean runOnce = true;
     @Before
     public void initialize() {
-        numberArray = s.split("");
-        testReversedNumberArrayList.add("9");
-        testReversedNumberArrayList.add("8");
-        testReversedNumberArrayList.add("7");
-        testReversedNumberArrayList.add("6");
-        testReversedNumberArrayList.add("5");
-        testReversedNumberArrayList.add("4");
-        testReversedNumberArrayList.add("3");
-        testReversedNumberArrayList.add("2");
-        testReversedNumberArrayList.add("1");
+        if(runOnce) {
+            numberArray = s.split("");
+            testReversedNumberArrayList.add("9");
+            testReversedNumberArrayList.add("8");
+            testReversedNumberArrayList.add("7");
+            testReversedNumberArrayList.add("6");
+            testReversedNumberArrayList.add("5");
+            testReversedNumberArrayList.add("4");
+            testReversedNumberArrayList.add("3");
+            testReversedNumberArrayList.add("2");
+            testReversedNumberArrayList.add("1");
+            runOnce = false;
+        }
     }
 
     @Test
@@ -85,24 +89,7 @@ public class NumberConverterSpec {
         assertEquals(expected, actual);
     }
 
-    @Test
-    public void convertHundredsIntoWordsTest() {
-        String expected1 = "SevenHundredEightyNine";
-        String expected2 = "FiveHundredSeventeen";
-        String expected3 = "FourHundredNine";
-        String expected4 = "TwentyThree";
-        String expected5 = "TwentyFour";
-        String actual1 = numberConverter.convertHundredsIntoWords("789");
-        String actual2 = numberConverter.convertHundredsIntoWords("517");
-        String actual3 = numberConverter.convertHundredsIntoWords("409");
-        String actual4 = numberConverter.convertHundredsIntoWords("023");
-        String actual5 = numberConverter.convertHundredsIntoWords("24");
-        assertEquals(expected1, actual1);
-        assertEquals(expected2, actual2);
-        assertEquals(expected3, actual3);
-        assertEquals(expected4, actual4);
-        assertEquals(expected5, actual5);
-    }
+
 
     @Test
     public void appendGroupingWordsTest(){

@@ -15,10 +15,6 @@ public class NumberConverter {
     public ArrayList<String> reversedNumberArrayList = new ArrayList<String>();
 
 
-
-
-
-
     public ArrayList<String> createReversedNumberArrayList(String[] numberArray){
         for(int i=numberArray.length-1; i>=0; i--){
             reversedNumberArrayList.add(numberArray[i]);
@@ -30,42 +26,42 @@ public class NumberConverter {
 
     public ArrayList<String> separateArrayListIntoGroupsOfThree(ArrayList<String> inputArrayList) {
 
-
-        ArrayList<String> newArrayList = new ArrayList<String>();
-
         String str = "";
         String lastString = "";
         int counter = 1;
-        boolean threeCounter = false;
 
-//        for(int i=0; i<inputArrayList.size(); i++){
-//
-//            counter++;
-//            while(counter<4){
-//                str += inputArrayList.get(i);
-//
-//                if(counter==4){
-//                    newArrayList.add(str);
-//                    str = "";
-//                }
-//            }
-//
-//
-//        }
+        ArrayList<String> newArrayList = new ArrayList<String>();
 
-//        for(int i=0; i<inputArrayList.size(); i++){
-//
-//            str += inputArrayList.get(i);
-//            if(counter % 3 == 0){
-//                newArrayList.add(str);
-//                str = "";
-//            }
-//            counter++;
-//
-//
-//        }
+        if(inputArrayList.size() % 3 == 0) {
 
+            for(int i=0; i<inputArrayList.size(); i++){
 
+                str += inputArrayList.get(i);
+                if(counter % 3 == 0){
+                    newArrayList.add(str);
+                    str = "";
+                }
+                counter++;
+            }
+        }
+
+        else {
+            ArrayList<String> firstElements = new ArrayList<String>();
+            for(int i=0; i<inputArrayList.size(); i++){
+
+                str += inputArrayList.get(i);
+                if(counter % 3 == 0){
+                    firstElements.add(str);
+                    str = "";
+                }
+                counter++;
+            }
+            for(int i=inputArrayList.size() - inputArrayList.size() % 3; i<inputArrayList.size(); i++) {
+                lastString += inputArrayList.get(i);
+            }
+            firstElements.add(lastString);
+            newArrayList = firstElements;
+        }
         return newArrayList;
     }
 
@@ -85,9 +81,9 @@ public class NumberConverter {
 
 
 
-    public String convertHundredsIntoWords(String inputArrayList) {
-        return null;
-    }
+//    public String convertHundredsIntoWords(String inputArrayList) {
+//        return null;
+//    }
 
 
 
@@ -97,11 +93,18 @@ public class NumberConverter {
 
         ArrayList<String> newArrayList = new ArrayList<String>();
         newArrayList.add(inputArrayList.get(0));
-        if(inputArrayList.get(1) != null){
-            newArrayList.add(inputArrayList.get(1) + "Thousand");
-        }
-        if(inputArrayList.get(2) != null){
-            newArrayList.add(inputArrayList.get(2) + "Million");
+        try {
+            if (inputArrayList.get(1) != null && inputArrayList.get(1).equals("000")){
+
+            }
+            if (inputArrayList.get(1) != null) {
+                newArrayList.add(inputArrayList.get(1) + "Thousand");
+            }
+            if (inputArrayList.get(2) != null) {
+                newArrayList.add(inputArrayList.get(2) + "Million");
+            }
+        } catch (IndexOutOfBoundsException e) {
+            // allows for numbers less than a million
         }
 
         return newArrayList;
@@ -139,12 +142,6 @@ public class NumberConverter {
 
 
 
-//    public static String[] reverseStringArray(String[] input) {
-//        String[] newArray = new String[input.length];
-//        for(int i=0; i<newArray.length; i++) {
-//            newArray[i] = input[input.length - i - 1];
-//        }
-//        return newArray;
-//    }
+
 
 }

@@ -10,7 +10,6 @@ public class HundredsWordConverter {
 
 
 
-//    public static String[] oneThroughNinetyNine = {"","One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Eleven","Twelve","Thirteen","Fourteen","Fifteen","Sixteen","Seventeen","Eighteen","Nineteen","Twenty","TwentyOne","TwentyTwo","TwentyThree","TwentyFour","TwentyFive","TwentySix","TwentySeven","TwentyEight","TwentyNine","Thirty","ThirtyOne","ThirtyTwo","ThirtyThree","ThirtyFour","ThirtyFive","ThirtySix","ThirtySeven","ThirtyEight","ThirtyNine","Forty","FortyOne","FortyTwo","FortyThree","FortyFour","FortyFive","FortySix","FortySeven","FortyEight","FortyNine","Fifty","FiftyOne","FiftyTwo","FiftyThree","FiftyFour","FiftyFive","FiftySix","FiftySeven","FiftyEight","FiftyNine","Sixty","SixtyOne","SixtyTwo","SixtyThree","SixtyFour","SixtyFive","SixtySix","SixtySeven","SixtyEight","SixtyNine","Seventy","SeventyOne","SeventyTwo","SeventyThree","SeventyFour","SeventyFive","SeventySix","SeventySeven","SeventyEight","SeventyNine","Eighty","EightyOne","EightyTwo","EightyThree","EightyFour","EightyFive","EightySix","EightySeven","EightyEight","EightyNine","Ninety","NinetyOne","NinetyTwo","NinetyThree","NinetyFour","NinetyFive","NinetySix","NinetySeven","NinetyEight","NinetyNine"};
 
     public String[] oneThroughNine = {"","One","Two","Three","Four","Five","Six","Seven","Eight","Nine"};
 
@@ -20,35 +19,6 @@ public class HundredsWordConverter {
 
     public String[] hundredsGroupWords = {"","OneHundred","TwoHundred","ThreeHundred","FourHundred","FiveHundred","SixHundred","SevenHundred","EightHundred","NineHundred"};
 
-
-//    public Map<String,String> lessThanTenWordMap = new HashMap<String,String>();
-//    public Map<String,String> tensWordMap = new HashMap<String,String>();
-//    public Map<String,String> teensWordMap = new HashMap<String, String>();
-//    public Map<String,String> hundredsWordMap = new HashMap<String, String>();
-//
-//    public void fillMaps() {
-//        lessThanTenWordMap.put("0", "");
-//        lessThanTenWordMap.put("1","One");
-//        lessThanTenWordMap.put("2","Two");
-//        lessThanTenWordMap.put("3","Three");
-//        lessThanTenWordMap.put("4","Four");
-//        lessThanTenWordMap.put("5","Five");
-//        lessThanTenWordMap.put("6","Six");
-//        lessThanTenWordMap.put("7","Seven");
-//        lessThanTenWordMap.put("8","Eight");
-//        lessThanTenWordMap.put("9","Nine");
-//        lessThanTenWordMap.put("10","Ten");
-//        lessThanTenWordMap.put("11","Eleven");
-//        lessThanTenWordMap.put("12","Twelve");
-//        lessThanTenWordMap.put("13","Thirteen");
-//        lessThanTenWordMap.put("14","Fourteen");
-//        lessThanTenWordMap.put("15","Fifteen");
-//        lessThanTenWordMap.put("16","Sixteen");
-//        lessThanTenWordMap.put("17","Seventeen");
-//        lessThanTenWordMap.put("18","Eighteen");
-//        lessThanTenWordMap.put("19","Nineteen");
-//
-//    }
 
     public int[] convertStringToIntArray(String input){
         return null;

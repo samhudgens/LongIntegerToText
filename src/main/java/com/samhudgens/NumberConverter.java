@@ -79,16 +79,6 @@ public class NumberConverter {
     }
 
 
-
-
-//    public String convertHundredsIntoWords(String inputArrayList) {
-//        return null;
-//    }
-
-
-
-
-
     public ArrayList<String> appendGroupingWords(ArrayList<String> inputArrayList){
 
         ArrayList<String> newArrayList = new ArrayList<String>();
@@ -111,8 +101,6 @@ public class NumberConverter {
     }
 
 
-
-
     public ArrayList<String> reverseGroupedArrayList(ArrayList<String> inputArrayList) {
         if(inputArrayList.size() > 1) {
             String element = inputArrayList.remove(0);
@@ -121,7 +109,6 @@ public class NumberConverter {
         }
         return inputArrayList;
     }
-
 
 
 
@@ -135,13 +122,6 @@ public class NumberConverter {
 
         return result;
     }
-
-
-
-
-
-
-
 
 
 }

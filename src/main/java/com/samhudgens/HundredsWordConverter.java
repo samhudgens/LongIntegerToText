@@ -20,11 +20,6 @@ public class HundredsWordConverter {
     public String[] hundredsGroupWords = {"","OneHundred","TwoHundred","ThreeHundred","FourHundred","FiveHundred","SixHundred","SevenHundred","EightHundred","NineHundred"};
 
 
-    public int[] convertStringToIntArray(String input){
-        return null;
-    }
-
-
 
     public String convertHundredNumberToWordFormat(String inputNumber) {
 
@@ -38,11 +33,6 @@ public class HundredsWordConverter {
             targetIndex = Integer.parseInt(inputNumber);
             sb.append(oneThroughNine[targetIndex]);
         }
-
-//        if(inputNumber.length() == 2){
-//            targetIndex = Integer.parseInt(inputNumber);
-//            sb.append(oneThroughNinetyNine[targetIndex]);
-//        }
 
         if (inputNumber.length() == 2) {
             if(inputNumberArray[0].matches("1")) {

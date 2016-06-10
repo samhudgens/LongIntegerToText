@@ -26,21 +26,30 @@ public class NumberConverterSpec {
     public void initialize() {
         if(runOnce) {
             numberArray = s.split("");
-            testReversedNumberArrayList.add("9");
-            testReversedNumberArrayList.add("8");
-            testReversedNumberArrayList.add("7");
-            testReversedNumberArrayList.add("6");
-            testReversedNumberArrayList.add("5");
-            testReversedNumberArrayList.add("4");
-            testReversedNumberArrayList.add("3");
-            testReversedNumberArrayList.add("2");
-            testReversedNumberArrayList.add("1");
+//            testReversedNumberArrayList.add("9");
+//            testReversedNumberArrayList.add("8");
+//            testReversedNumberArrayList.add("7");
+//            testReversedNumberArrayList.add("6");
+//            testReversedNumberArrayList.add("5");
+//            testReversedNumberArrayList.add("4");
+//            testReversedNumberArrayList.add("3");
+//            testReversedNumberArrayList.add("2");
+//            testReversedNumberArrayList.add("1");
             runOnce = false;
         }
     }
 
     @Test
     public void createReversedNumberArrayTest(){
+        testReversedNumberArrayList.add("9");
+        testReversedNumberArrayList.add("8");
+        testReversedNumberArrayList.add("7");
+        testReversedNumberArrayList.add("6");
+        testReversedNumberArrayList.add("5");
+        testReversedNumberArrayList.add("4");
+        testReversedNumberArrayList.add("3");
+        testReversedNumberArrayList.add("2");
+        testReversedNumberArrayList.add("1");
         ArrayList<String> expected = testReversedNumberArrayList;
         ArrayList<String> actual = numberConverter.createReversedNumberArrayList(numberArray);
         assertEquals(expected, actual);

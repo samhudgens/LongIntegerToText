@@ -11,16 +11,6 @@ import java.util.Scanner;
  */
 public class Main {
 
-//    public static void main(String[] args) throws IOException {
-//        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-//        String s;
-//        while ((s = in.readLine()) != null) {
-//
-//
-//
-//        }
-//    }
-
 
     public static void main(String[] args) {
 
@@ -68,13 +58,8 @@ public class Main {
 
             System.out.println(input);
             System.out.println(finalProduct);
-            
+
         }
-
-
-
-
-
 
     }
 }

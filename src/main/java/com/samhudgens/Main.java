@@ -38,12 +38,10 @@ public class Main {
             String input = scanner.nextLine();
 
             if(!input.matches("\\d+")){
-
                 if(input.equals("off")){
                     System.out.println("System off");
                     break;
                 }
-
                 System.out.println("That's not a valid input, please enter something else");
                 continue;
             }
@@ -70,10 +68,7 @@ public class Main {
 
             System.out.println(input);
             System.out.println(finalProduct);
-
-//            if(input.equals("off")){
-//                isOn = false;
-//            }
+            
         }
 
 

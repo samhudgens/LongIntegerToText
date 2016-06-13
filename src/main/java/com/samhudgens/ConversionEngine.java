@@ -17,14 +17,7 @@ public class ConversionEngine {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
 
-//            if(!input.matches("\\d+")){
-//                if(input.equals("off")){
-//                    System.out.println("System off");
-//                    break;
-//                }
-//                System.out.println("That's not a valid input, please enter something else");
-//                continue;
-//            }
+
 
         String[] newInput = input.split("");
 
@@ -54,3 +47,13 @@ public class ConversionEngine {
 
     }
 }
+
+
+//            if(!input.matches("\\d+")){
+//                if(input.equals("off")){
+//                    System.out.println("System off");
+//                    break;
+//                }
+//                System.out.println("That's not a valid input, please enter something else");
+//                continue;
+//            }

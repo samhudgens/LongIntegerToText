@@ -85,7 +85,7 @@ public class NumberConverter {
         newArrayList.add(inputArrayList.get(0));
         try {
             if (inputArrayList.get(1) != null && inputArrayList.get(1).equals("000")){
-
+                newArrayList.add(inputArrayList.get(1));
             }
             if (inputArrayList.get(1) != null) {
                 newArrayList.add(inputArrayList.get(1) + "Thousand");

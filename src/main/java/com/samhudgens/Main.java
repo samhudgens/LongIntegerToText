@@ -17,49 +17,111 @@ public class Main {
         boolean isOn = true;
 
         System.out.println("Enter a number from 1 to 999,999,999 (without commas)");
-        System.out.println("To end the program, enter \"off\"");
+        //System.out.println("To end the program, enter \"off\"");
 
-        NumberConverter numberConverter = new NumberConverter();
-        HundredsWordConverter hundredsWordConverter = new HundredsWordConverter();
+//        NumberConverter numberConverter = new NumberConverter();
+//        HundredsWordConverter hundredsWordConverter = new HundredsWordConverter();
 
+        ConversionEngine conversionEngine = new ConversionEngine();
 
-        while(isOn) {
-            Scanner scanner = new Scanner(System.in);
-            String input = scanner.nextLine();
-
-            if(!input.matches("\\d+")){
-                if(input.equals("off")){
-                    System.out.println("System off");
-                    break;
-                }
-                System.out.println("That's not a valid input, please enter something else");
-                continue;
-            }
-
-            String[] newInput = input.split("");
-
-            ArrayList<String> reversedArray = numberConverter.createReversedNumberArrayList(newInput);
-
-            ArrayList<String> separatedArray = numberConverter.separateArrayListIntoGroupsOfThree(reversedArray);
-
-            ArrayList<String> correctedHundredsArray = numberConverter.reverseEachArrayListElement(separatedArray);
-
-            ArrayList<String> wordsArray = new ArrayList<String>();
-
-            for (int i = 0; i < correctedHundredsArray.size(); i++) {
-                wordsArray.add(hundredsWordConverter.convertHundredNumberToWordFormat(correctedHundredsArray.get(i)));
-            }
-
-            ArrayList<String> wordsArrayWithGroupingWords = numberConverter.appendGroupingWords(wordsArray);
-
-            ArrayList<String> reversedGroupingWords = numberConverter.reverseGroupedArrayList(wordsArrayWithGroupingWords);
-
-            String finalProduct = numberConverter.concatenateIntoStringAndAddDollars(reversedGroupingWords);
-
-            System.out.println(input);
-            System.out.println(finalProduct);
-
-        }
+        conversionEngine.convertNumbers();
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//            Scanner scanner = new Scanner(System.in);
+//            String input = scanner.nextLine();
+//
+////            if(!input.matches("\\d+")){
+////                if(input.equals("off")){
+////                    System.out.println("System off");
+////                    break;
+////                }
+////                System.out.println("That's not a valid input, please enter something else");
+////                continue;
+////            }
+//
+//            String[] newInput = input.split("");
+//
+//            ArrayList<String> reversedArray = numberConverter.createReversedNumberArrayList(newInput);
+//
+//            ArrayList<String> separatedArray = numberConverter.separateArrayListIntoGroupsOfThree(reversedArray);
+//
+//            ArrayList<String> correctedHundredsArray = numberConverter.reverseEachArrayListElement(separatedArray);
+//
+//            ArrayList<String> wordsArray = new ArrayList<String>();
+//
+//            for (int i = 0; i < correctedHundredsArray.size(); i++) {
+//                wordsArray.add(hundredsWordConverter.convertHundredNumberToWordFormat(correctedHundredsArray.get(i)));
+//            }
+//
+//            ArrayList<String> wordsArrayWithGroupingWords = numberConverter.appendGroupingWords(wordsArray);
+//
+//            ArrayList<String> reversedGroupingWords = numberConverter.reverseGroupedArrayList(wordsArrayWithGroupingWords);
+//
+//            String finalProduct = numberConverter.concatenateIntoStringAndAddDollars(reversedGroupingWords);
+//
+//            System.out.println(input);
+//            System.out.println(finalProduct);
+
+
+
+
+
+
+
+
+//while(isOn) {
+//        Scanner scanner = new Scanner(System.in);
+//        String input = scanner.nextLine();
+//
+//        if(!input.matches("\\d+")){
+//        if(input.equals("off")){
+//        System.out.println("System off");
+//        break;
+//        }
+//        System.out.println("That's not a valid input, please enter something else");
+//        continue;
+//        }
+//
+//        String[] newInput = input.split("");
+//
+//        ArrayList<String> reversedArray = numberConverter.createReversedNumberArrayList(newInput);
+//
+//        ArrayList<String> separatedArray = numberConverter.separateArrayListIntoGroupsOfThree(reversedArray);
+//
+//        ArrayList<String> correctedHundredsArray = numberConverter.reverseEachArrayListElement(separatedArray);
+//
+//        ArrayList<String> wordsArray = new ArrayList<String>();
+//
+//        for (int i = 0; i < correctedHundredsArray.size(); i++) {
+//        wordsArray.add(hundredsWordConverter.convertHundredNumberToWordFormat(correctedHundredsArray.get(i)));
+//        }
+//
+//        ArrayList<String> wordsArrayWithGroupingWords = numberConverter.appendGroupingWords(wordsArray);
+//
+//        ArrayList<String> reversedGroupingWords = numberConverter.reverseGroupedArrayList(wordsArrayWithGroupingWords);
+//
+//        String finalProduct = numberConverter.concatenateIntoStringAndAddDollars(reversedGroupingWords);
+//
+//        System.out.println(input);
+//        System.out.println(finalProduct);
+//
+//        }

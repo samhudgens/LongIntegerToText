@@ -24,7 +24,7 @@ public class NumberConverterSpec {
     boolean runOnce = true;
     @Before
     public void initialize() {
-        
+
             numberArray = s.split("");
 //            testReversedNumberArrayList.add("9");
 //            testReversedNumberArrayList.add("8");
